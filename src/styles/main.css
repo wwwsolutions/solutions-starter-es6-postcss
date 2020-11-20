@@ -1,0 +1,51 @@
+/* ⌘ OPTIONAL GENERATORS ⌘
+
+gulp task: sprites-generator (build-utils/gulp/tasks/task-sprites-generator)
+
+description:
+    Generates sprites and png to use as inline svg.
+
+usage:
+    @import "generated/_sprite"; 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* ⌘ OPTIONAL RESETS ⌘ 
+
+description:
+    Apply css reset with normalize.css
+
+source: 
+    https://necolas.github.io/normalize.css/    
+
+usage:    
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@import "normalize.css";
+
+/*///////////////////////////////////////////////////////
+  ⌘ SITE STYLES ★ SITE STYLES ★ SITE STYLES ⌘ 
+///////////////////////////////////////////////////////*/
+
+/* ⌘ PALETTES ⌘ /////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* ★ DEFAULT */
+@import "palettes/_palette-default";
+
+/* ★ PROJECT PALETTE */
+@import "palettes/_my-custom-palette";
+
+/* ⌘ FONTS ⌘ /////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap");
+
+/* ⌘ STYLES ⌘ /////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* ★ BASE */
+@import "base/_variables";
+@import "base/_variables-colors";
+@import "base/_mixins";
+@import "base/_global";
+@import "base/_layout";
+@import "base/_gradients";
+
+/* ★ MODULES */
+/* @import "modules/_example"; */

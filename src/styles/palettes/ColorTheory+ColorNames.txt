@@ -1,0 +1,39 @@
+------------------ Color Theory links-------------------------
+
+https://www.oberlo.com/blog/color-combinations-cheat-sheet
+
+
+------------------ Color names -------------------------------------
+
+> Base colors names, 12 colors
+
+<primary>                              <shortcut>
+  red                                       r
+  blue                                      b
+  yellow                                    y  
+
+<secondary> 
+  orange                                    o
+  green                                     g
+  purple                                    p
+
+<tertiary>
+  red-orange                               ro
+  yellow-orange                            yo
+  yellow-green                             yg
+  blue-green                               bg
+  blue-purple                              bp
+  red-purple                               rp
+
+------------------ Color Variables names ---------------------------
+$r100, --r100 -|
+$r200, --r200  | base color variants
+$r300, --r300  |
+$r400, --r400 -|
+$r500, --r500   <-- base color alias
+$r600, --r600 -|
+$r700, --r700  | base color variants
+$r800, --r800  |
+$r900, --r900 -|
+
+

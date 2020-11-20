@@ -1,0 +1,214 @@
+/* https://github.com/jonathantneal/postcss-color-mod-function?spm=a2c6h.14275010.0.0.7f90209cXUsb52 */
+:root { 
+  /* 
+  
+  ♔ ♔ ♔ PALETTE MODIFIERS ♔ ♔ ♔
+  
+  palette fine tuning
+
+  -----------------------------------*/
+
+  $step: 0; /* 0
+   <> 20 */
+  $modifier: 1.000; 
+  
+  /* 
+  
+  ♔ ♔ ♔ BASE COLORS DEFINITION ♔ ♔ ♔
+  
+    adjust/modify individual base color
+  
+  -----------------------------------*/
+
+  /* <primary_colors> */
+  $red: color-mod(
+    hsl(0, 0%, 0%)
+    alpha(0%)
+    );
+
+  $blue: color-mod(
+    hsl(0, 0%, 0%)
+    alpha(0%)
+    );
+  
+  $yellow: color-mod(
+    hsl(0, 0%, 0%)
+    alpha(0%)
+  );
+
+  /* <secondary_colors> */
+  $orange: color-mod(
+    hsl(0, 0%, 0%)
+    alpha(0%)
+  );
+
+  $green: color-mod(
+    hsl(0, 0%, 0%)
+    alpha(0%)
+  );
+  
+  $purple: color-mod(
+    hsl(0, 0%, 0%)
+    alpha(0%)
+  );
+
+  /* <tertiary_colors> */
+  $red-orange: color-mod(
+    hsl(0, 0%, 0%)
+    alpha(0%)
+  );
+  
+  $yellow-orange: color-mod(
+    hsl(0, 0%, 0%)
+    alpha(0%)
+  );
+
+  $yellow-green: color-mod(
+    hsl(0, 0%, 0%)
+    alpha(0%)
+  );
+  
+  $blue-green: color-mod(
+    hsl(0, 0%, 0%)
+    alpha(0%)
+  );
+  
+  $blue-purple: color-mod(
+    hsl(0, 0%, 0%) 
+    alpha(0%)
+  );
+  
+  $red-purple: color-mod(
+    hsl(0, 0%, 0%)
+    alpha(0%)
+);
+
+  /* 
+  
+  ♔ ♔ ♔ COLOR VARIANTS DEFINITION ♔ ♔ ♔
+  
+    4 * tint | base color | 4 * shade
+
+  -----------------------------------*/
+  
+  --r100: color-mod($red);
+  --r200: color-mod($red);
+  --r300: color-mod($red);
+  --r400: color-mod($red);
+  --r500: color-mod($red);
+  --r600: color-mod($red);
+  --r700: color-mod($red);
+  --r800: color-mod($red);
+  --r900: color-mod($red);
+
+  --rp100: color-mod($red-purple);
+  --rp200: color-mod($red-purple);
+  --rp300: color-mod($red-purple);
+  --rp400: color-mod($red-purple);
+  --rp500: color-mod($red-purple);
+  --rp600: color-mod($red-purple);
+  --rp700: color-mod($red-purple);
+  --rp800: color-mod($red-purple);
+  --rp900: color-mod($red-purple);
+
+
+  --p100: color-mod($purple);
+  --p200: color-mod($purple);
+  --p300: color-mod($purple);
+  --p400: color-mod($purple);
+  --p500: color-mod($purple);
+  --p600: color-mod($purple);
+  --p700: color-mod($purple);
+  --p800: color-mod($purple);
+  --p900: color-mod($purple);
+  
+  --bp100: color-mod($blue-purple);
+  --bp200: color-mod($blue-purple);
+  --bp300: color-mod($blue-purple);
+  --bp400: color-mod($blue-purple);
+  --bp500: color-mod($blue-purple);
+  --bp600: color-mod($blue-purple);
+  --bp700: color-mod($blue-purple);
+  --bp800: color-mod($blue-purple);
+  --bp900: color-mod($blue-purple);
+
+  --b100: color-mod($blue);
+  --b200: color-mod($blue);
+  --b300: color-mod($blue);
+  --b400: color-mod($blue);
+  --b500: color-mod($blue);
+  --b600: color-mod($blue);
+  --b700: color-mod($blue);
+  --b800: color-mod($blue);
+  --b900: color-mod($blue);
+
+  --bg100: color-mod($blue-green);
+  --bg200: color-mod($blue-green);
+  --bg300: color-mod($blue-green);
+  --bg400: color-mod($blue-green);
+  --bg500: color-mod($blue-green);
+  --bg600: color-mod($blue-green);
+  --bg700: color-mod($blue-green);
+  --bg800: color-mod($blue-green);
+  --bg900: color-mod($blue-green);
+  
+  --g100: color-mod($green);
+  --g200: color-mod($green);
+  --g300: color-mod($green);
+  --g400: color-mod($green);
+  --g500: color-mod($green);
+  --g600: color-mod($green);
+  --g700: color-mod($green);
+  --g800: color-mod($green);
+  --g900: color-mod($green);
+
+  --yg100: color-mod($yellow-green);
+  --yg200: color-mod($yellow-green);
+  --yg300: color-mod($yellow-green);
+  --yg400: color-mod($yellow-green);
+  --yg500: color-mod($yellow-green);
+  --yg600: color-mod($yellow-green);
+  --yg700: color-mod($yellow-green);
+  --yg800: color-mod($yellow-green);
+  --yg900: color-mod($yellow-green);
+
+  --y100: color-mod($yellow);
+  --y200: color-mod($yellow);
+  --y300: color-mod($yellow);
+  --y400: color-mod($yellow);
+  --y500: color-mod($yellow);
+  --y600: color-mod($yellow);
+  --y700: color-mod($yellow);
+  --y800: color-mod($yellow);
+  --y900: color-mod($yellow);
+
+  --yo100: color-mod($yellow-orange);
+  --yo200: color-mod($yellow-orange);
+  --yo300: color-mod($yellow-orange);
+  --yo400: color-mod($yellow-orange);
+  --yo500: color-mod($yellow-orange);
+  --yo600: color-mod($yellow-orange);
+  --yo700: color-mod($yellow-orange);
+  --yo800: color-mod($yellow-orange);
+  --yo900: color-mod($yellow-orange);
+
+  --o100: color-mod($orange);
+  --o200: color-mod($orange);
+  --o300: color-mod($orange);
+  --o400: color-mod($orange);
+  --o500: color-mod($orange);
+  --o600: color-mod($orange);
+  --o700: color-mod($orange);
+  --o800: color-mod($orange);
+  --o900: color-mod($orange);
+
+  --ro100: color-mod($red-orange);
+  --ro200: color-mod($red-orange);
+  --ro300: color-mod($red-orange);
+  --ro400: color-mod($red-orange);
+  --ro500: color-mod($red-orange);
+  --ro600: color-mod($red-orange);
+  --ro700: color-mod($red-orange);
+  --ro800: color-mod($red-orange);
+  --ro900: color-mod($red-orange);
+}

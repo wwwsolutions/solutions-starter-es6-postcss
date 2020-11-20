@@ -1,0 +1,100 @@
+/* red, green, blue-purple, yellow-orange */
+.palette-tetradic {
+  /* 
+  
+  ♔ ♔ ♔ GLOBAL MODIFIERS ♔ ♔ ♔
+  
+    Adjust/modify all base colors.
+  
+  -----------------------------------*/
+
+  $step: 10; /* 0 <> 20 */
+  $modifier: 1.72; 
+  
+  $hue: hue(+0); /* deg */
+  $saturation: saturation(-0%);
+  $contrast: contrast(100%);
+  $lightness: lightness(+0%);
+  $whiteness: whiteness(+0%);
+  $blackness: blackness(+0%);
+  $tint: tint(0%);
+  $shade: shade(0%);
+  $alpha: alpha(100%);
+
+  /* variant distances */
+  $100: 4;
+  $200: 3;
+  $300: 2;
+  $400: 1;
+  /* $500 | base color */
+  $600: 1;
+  $700: 2;
+  $800: 3;
+  $900: 4;
+  
+  /* 
+  
+  ♔ ♔ ♔ BASE COLORS DEFINITION ♔ ♔ ♔
+  
+    adjust/modify individual base color
+  
+  -----------------------------------*/
+
+  /* <primary_colors> */
+  $red: color-mod( hsl(359, 91%, 52%) $hue $saturation $contrast $lightness $whiteness $blackness $tint $shade $alpha );  
+
+  /* <secondary_colors> */
+  $green: color-mod( hsl(122, 40%, 49%) $hue $saturation $contrast $lightness $whiteness $blackness $tint $shade $alpha );
+  
+  /* <tertiary_colors> */
+  $yellow-orange: color-mod( hsl(45, 100%, 51%) $hue $saturation $contrast $lightness $whiteness $blackness $tint $shade $alpha );
+  $blue-purple: color-mod( hsl(262, 52%, 47%) $hue $saturation $contrast $lightness $whiteness $blackness $tint $shade $alpha );
+  
+  /* 
+  
+  ♔ ♔ ♔ COLOR VARIANTS DEFINITION ♔ ♔ ♔
+  
+    4 * tint | base color | 4 * shade
+
+  -----------------------------------*/
+  
+  --r100: color-mod($red tint(resolve($100 * ($step * $modifier))%));
+  --r200: color-mod($red tint(resolve($200 * ($step * $modifier))%));
+  --r300: color-mod($red tint(resolve($300 * ($step * $modifier))%));
+  --r400: color-mod($red tint(resolve($400 * ($step * $modifier))%));
+  --r500: color-mod($red);
+  --r600: color-mod($red shade(resolve($600 * ($step * $modifier))%));
+  --r700: color-mod($red shade(resolve($700 * ($step * $modifier))%));
+  --r800: color-mod($red shade(resolve($800 * ($step * $modifier))%));
+  --r900: color-mod($red shade(resolve($900 * ($step * $modifier))%));
+
+  --bp100: color-mod($blue-purple tint(resolve($100 * ($step * $modifier))%));
+  --bp200: color-mod($blue-purple tint(resolve($200 * ($step * $modifier))%));
+  --bp300: color-mod($blue-purple tint(resolve($300 * ($step * $modifier))%));
+  --bp400: color-mod($blue-purple tint(resolve($400 * ($step * $modifier))%));
+  --bp500: color-mod($blue-purple);
+  --bp600: color-mod($blue-purple shade(resolve($600 * ($step * $modifier))%));
+  --bp700: color-mod($blue-purple shade(resolve($700 * ($step * $modifier))%));
+  --bp800: color-mod($blue-purple shade(resolve($800 * ($step * $modifier))%));
+  --bp900: color-mod($blue-purple shade(resolve($900 * ($step * $modifier))%));
+
+  --g100: color-mod($green tint(resolve($100 * ($step * $modifier))%));
+  --g200: color-mod($green tint(resolve($200 * ($step * $modifier))%));
+  --g300: color-mod($green tint(resolve($300 * ($step * $modifier))%));
+  --g400: color-mod($green tint(resolve($400 * ($step * $modifier))%));
+  --g500: color-mod($green);
+  --g600: color-mod($green shade(resolve($600 * ($step * $modifier))%));
+  --g700: color-mod($green shade(resolve($700 * ($step * $modifier))%));
+  --g800: color-mod($green shade(resolve($800 * ($step * $modifier))%));
+  --g900: color-mod($green shade(resolve($900 * ($step * $modifier))%));
+
+  --yo100: color-mod($yellow-orange tint(resolve($100 * ($step * $modifier))%));
+  --yo200: color-mod($yellow-orange tint(resolve($200 * ($step * $modifier))%));
+  --yo300: color-mod($yellow-orange tint(resolve($300 * ($step * $modifier))%));
+  --yo400: color-mod($yellow-orange tint(resolve($400 * ($step * $modifier))%));
+  --yo500: color-mod($yellow-orange);
+  --yo600: color-mod($yellow-orange shade(resolve($600 * ($step * $modifier))%));
+  --yo700: color-mod($yellow-orange shade(resolve($700 * ($step * $modifier))%));
+  --yo800: color-mod($yellow-orange shade(resolve($800 * ($step * $modifier))%));
+  --yo900: color-mod($yellow-orange shade(resolve($900 * ($step * $modifier))%));
+}

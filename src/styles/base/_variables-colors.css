@@ -1,0 +1,26 @@
+/* ★ This file exclusively holds project color variables. */
+/*
+  
+  ⌘ SETTING PROJECT PALETTE GUIDE
+
+  1. Select adequate palette file from 'styles/palettes/*' or create new one.
+  
+  2. Clone file.
+  
+  3. Rename file. (eg: '_my-custom-palette.css')
+
+  4. Import new file into main.css after '★ PROJECT PALETTE' comment.
+  
+  5. Rename palette class name --> ':root'.
+
+  6. Adjust/modify palette according to your needs.
+  
+  7. HERE - define and organize project's colors from the created palette.
+
+*/
+
+:root {
+  /* ★ project colors sample */
+  --brand-red: var(--bp500);
+  --brand-red-dark: var(--bp700);
+}
