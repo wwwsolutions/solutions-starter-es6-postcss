@@ -50,5 +50,3 @@ import './app/application';
 if (module.hot) {
   module.hot.accept();
 }
-
-

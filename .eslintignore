@@ -1,8 +1,11 @@
 **/node_modules/*
+webpack.config.js
+
 **/dist/*
 **/build-utils/*
 **/src/assets/*
 **/src/templates/*
 **/src/vendors/*
 **/temp/*
+
 
