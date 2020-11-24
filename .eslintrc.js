@@ -15,7 +15,11 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
+  plugins: [
+    'immutable',
+  ],
   rules: {
+    'immutable/no-mutation': 'error',
     'max-len': [
       'error',
       {
@@ -40,12 +44,7 @@ module.exports = {
     'no-setter-return': 0,
     'no-useless-catch': 0,
     'no-console': 'off',
-    indent: [
-      'error',
-      2,
-      {
-        SwitchCase: 1,
-      },
+    indent: ['error', 2, { SwitchCase: 1 },
     ],
     'linebreak-style': 0,
     quotes: [
