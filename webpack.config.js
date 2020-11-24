@@ -3,9 +3,6 @@ const currentTask = process.env.npm_lifecycle_event;
 const fse = require('fs-extra');
 const path = require('path');
 
-// PATHS
-const paths = require('./build-utils/webpack/webpack.paths');
-
 // WEBPACK PLUGINS
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -27,14 +24,18 @@ const mixins = require('postcss-mixins');
 
 const math = require('postcss-math');
 
+// PATHS
+const paths = require('./build-utils/webpack/webpack.paths');
+
+
 // POSTCSS PLUGINS CONFIG
 const postCSSPlugins = [
   atRulesVariables({ /* atRules: ['media'] */ }),
   atImport({
     plugins: [
       atRulesVariables({ /* options */ }),
-      atImport()
-    ]
+      atImport(),
+    ],
   }),
   atEach(),
   atFor(),
@@ -51,7 +52,7 @@ const postCSSPlugins = [
 // CONFIG
 class RunAfterCompile {
   apply(compiler) {
-    compiler.hooks.done.tap('Copy images', function () {
+    compiler.hooks.done.tap('Copy images', () => {
       fse.copySync(paths.assets.images, paths.dist.images);
       fse.copySync(paths.assets.icons, paths.dist.icons);
     });
@@ -59,7 +60,7 @@ class RunAfterCompile {
 }
 
 // CONFIG
-let cssConfig = {
+const cssConfig = {
   test: /\.css$/i,
   use: [
     'css-loader?url=false',
@@ -73,7 +74,7 @@ let cssConfig = {
 };
 
 // CONFIG
-let eslintConfig = {
+const eslintConfig = {
   test: /\.js$/,
   enforce: 'pre',
   exclude: /node_modules/,
@@ -81,23 +82,19 @@ let eslintConfig = {
 };
 
 // CONFIG
-let pages = fse
+const pages = fse
   .readdirSync('src')
-  .filter(function (file) {
-    return file.endsWith('.html');
-  })
-  .map(function (page) {
-    return new HtmlWebpackPlugin({
-      filename: page,
-      template: `${paths.src}/${page}`,
-    });
-  });
+  .filter((file) => file.endsWith('.html'))
+  .map((page) => new HtmlWebpackPlugin({
+    filename: page,
+    template: `${paths.src}/${page}`,
+  }));
 
 /* START COMMON CONFIGURATION
 > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > >
 ------------------------------------------------------------------------------------------------------------- */
 
-let config = {
+const config = {
   entry: paths.entry.index,
   plugins: pages,
   // configuration regarding modules
@@ -116,14 +113,14 @@ config.plugins.push(
     // syntax: 'scss',
     failOnError: false,
     quiet: false,
-  })
+  }),
 ); // END COMMON CONFIGURATION
 
 /* START DEVELOPMENT CONFIGURATION
 > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > >
 ------------------------------------------------------------------------------------------------------------- */
 
-if (currentTask == 'dev') {
+if (currentTask === 'dev') {
   // add loader to start of array
   cssConfig.use.unshift('style-loader');
 
@@ -137,7 +134,7 @@ if (currentTask == 'dev') {
   };
 
   config.devServer = {
-    before: function (app, server) {
+    before(app, server) {
       server._watch(`${paths.src}/**/*.html`);
     },
     contentBase: paths.src,
@@ -158,7 +155,7 @@ if (currentTask == 'dev') {
 > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > >
 ------------------------------------------------------------------------------------------------------------- */
 
-if (currentTask == 'build') {
+if (currentTask === 'build') {
   // configuration regarding modules
   // rules for modules (configure loaders, parser options, etc.)
   config.module.rules.push({
@@ -205,7 +202,7 @@ if (currentTask == 'build') {
       filename: `styles.[chunkhash].css`,
       // filename: `${paths.dist.stylesheets}/styles.[chunkhash].css`
     }),
-    new RunAfterCompile()
+    new RunAfterCompile(),
   );
 } // END PRODUCTION CONFIGURATION
 
